@@ -1,0 +1,105 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 25% 14%;
+    --foreground: 240 10% 96%;
+
+    --card: 240 30% 20%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 30% 20%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 260 68% 54%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 240 15% 25%;
+    --muted-foreground: 215.4 16.3% 80%;
+
+    --accent: 120 100% 54%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 15% 30%;
+    --input: 240 15% 30%;
+    --ring: 260 68% 54%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gaming-dark text-gaming-light;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gaming-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gaming-purple rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-opacity-80;
+  }
+}
+
+@layer components {
+  .gaming-btn {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-gaming-purple text-white rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-gaming-blue focus:ring-offset-2 focus:ring-offset-gaming-dark;
+  }
+
+  .gaming-btn-secondary {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-gaming-blue text-gaming-dark rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-gaming-purple focus:ring-offset-2 focus:ring-offset-gaming-dark;
+  }
+
+  .gaming-card {
+    @apply bg-card rounded-xl border border-gaming-purple/30 shadow-xl hover:shadow-gaming-purple/20 transition-all duration-300;
+  }
+
+  .gaming-input {
+    @apply bg-gaming-dark border border-gaming-purple/50 rounded-md p-2 text-gaming-light focus:border-gaming-blue focus:ring-1 focus:ring-gaming-blue outline-none transition-all duration-200;
+  }
+
+  .neon-border {
+    @apply border border-gaming-blue shadow-[0_0_10px_rgba(0,255,255,0.5)] animate-pulse-glow;
+  }
+}
+
+/* Animation delay utilities */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
